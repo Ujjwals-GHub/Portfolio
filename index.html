@@ -2,12 +2,30 @@
 <html lang="en" data-theme="dark">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>
+  (function () {
+    var t = localStorage.getItem('theme');
+    if (t === 'light') {
+      document.documentElement.removeAttribute('data-theme');
+    } else {
+      document.documentElement.setAttribute('data-theme', 'dark');
+    }
+  })();
+</script>
+<meta name="viewport" content="width=1280">
 <title>Ujjwal Gupta — Portfolio</title>
 <meta name="description" content="Ujjwal Gupta — Data Science &amp; AI student and enterprise systems professional transitioning into AI/ML Engineering. Projects in computer vision, recommendation systems, and applied ML.">
 <meta property="og:title" content="Ujjwal Gupta — Portfolio">
 <meta property="og:description" content="Four years of enterprise-scale systems experience, now building toward AI/ML Engineering.">
 <meta property="og:type" content="website">
+<!-- TODO: once you have a 1200x630 banner image, uncomment:
+<meta property="og:image" content="assets/og-banner.png">
+<meta name="twitter:card" content="summary_large_image">
+-->
+
+<!-- TODO: add a real favicon file to /assets, then uncomment:
+<link rel="icon" type="image/png" href="assets/favicon.png">
+-->
 
 <!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,6 +36,23 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 <link rel="stylesheet" href="css/style.css">
+
+<!-- Structured data for search engines -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Ujjwal Gupta",
+  "jobTitle": "AI/ML Engineer (in transition)",
+  "description": "Data Science & AI student and enterprise IT professional transitioning into AI/ML Engineering.",
+  "url": "https://ujjwals-ghub.github.io/",
+  "sameAs": [
+    "https://github.com/Ujjwals-GHub",
+    "https://www.linkedin.com/in/ujjwals-lin/",
+    "https://huggingface.co/Ujjwals-HFace"
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -39,7 +74,7 @@
     <div class="header-actions">
       <!-- Animated Theme Toggle Button -->
       <button id="theme-toggle" class="theme-toggle" aria-label="Toggle light and dark mode">
-        <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
           <circle cx="12" cy="12" r="5"></circle>
           <line x1="12" y1="1" x2="12" y2="3"></line>
           <line x1="12" y1="21" x2="12" y2="23"></line>
@@ -50,12 +85,12 @@
           <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
           <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
         </svg>
-        <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
           <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
         </svg>
       </button>
 
-      <a href="assets/Ujjwal_Gupta_Resume.pdf" class="btn btn-ghost btn-sm" download target="_blank" rel="noopener noreferrer">Resume</a>
+      <a href="assets/Ujjwal_Gupta_Resume.pdf" class="btn btn-ghost btn-sm" target="_blank" rel="noopener noreferrer">Resume</a>
       <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Open menu">
         <span></span><span></span><span></span>
       </button>
@@ -82,7 +117,7 @@
         </p>
         <div class="hero-actions">
           <a href="#projects" class="btn btn-primary">View projects</a>
-          <a href="assets/Ujjwal_Gupta_Resume.pdf" class="btn btn-outline" download target="_blank" rel="noopener noreferrer"><i class="fas fa-download"></i> Download resume</a>
+          <a href="assets/Ujjwal_Gupta_Resume.pdf" class="btn btn-outline" download rel="noopener noreferrer"><i class="fas fa-download" aria-hidden="true"></i> Download resume</a>
           <a href="#contact" class="btn btn-ghost">Contact me</a>
         </div>
       </div>
@@ -164,7 +199,7 @@
             <h3>SCCM &amp; Intune Administrator</h3>
             <p class="exp-progression">Scholar &rarr; Intern &rarr; Analyst</p>
           </div>
-          <p class="exp-dates"><i class="far fa-calendar-alt tech-icon"></i> Sep 2022 &mdash; Present</p>
+          <p class="exp-dates"><i class="far fa-calendar-alt tech-icon" aria-hidden="true"></i> Sep 2022 &mdash; Present</p>
         </div>
 
         <div class="exp-body">
@@ -211,34 +246,34 @@
 
       <div class="skills-grid">
         <div class="skill-card reveal">
-          <h3><i class="fas fa-code tech-icon"></i> Programming &amp; Data</h3>
+          <h3><i class="fas fa-code tech-icon" aria-hidden="true"></i> Programming &amp; Data</h3>
           <div class="chips">
             <span class="chip">Python</span><span class="chip">SQL</span>
             <span class="chip">Pandas</span><span class="chip">NumPy</span>
           </div>
         </div>
         <div class="skill-card reveal">
-          <h3><i class="fas fa-brain tech-icon"></i> Machine Learning &amp; AI</h3>
+          <h3><i class="fas fa-brain tech-icon" aria-hidden="true"></i> Machine Learning &amp; AI</h3>
           <div class="chips">
             <span class="chip">Scikit-learn</span><span class="chip">TensorFlow</span>
             <span class="chip">PyTorch</span>
           </div>
         </div>
         <div class="skill-card reveal">
-          <h3><i class="fas fa-chart-bar tech-icon"></i> Data visualization</h3>
+          <h3><i class="fas fa-chart-bar tech-icon" aria-hidden="true"></i> Data visualization</h3>
           <div class="chips">
             <span class="chip">Power BI</span><span class="chip">Matplotlib</span>
           </div>
         </div>
         <div class="skill-card reveal">
-          <h3><i class="fas fa-laptop-code tech-icon"></i> Development tools</h3>
+          <h3><i class="fas fa-laptop-code tech-icon" aria-hidden="true"></i> Development tools</h3>
           <div class="chips">
             <span class="chip">Git</span><span class="chip">GitHub</span>
             <span class="chip">Streamlit</span>
           </div>
         </div>
         <div class="skill-card reveal">
-          <h3><i class="fas fa-server tech-icon"></i> Enterprise IT &amp; Cloud</h3>
+          <h3><i class="fas fa-server tech-icon" aria-hidden="true"></i> Enterprise IT &amp; Cloud</h3>
           <div class="chips">
             <span class="chip">SCCM/MECM</span><span class="chip">Microsoft Intune</span>
             <span class="chip">WSUS</span><span class="chip">PowerShell</span>
@@ -277,8 +312,8 @@
             <li>OpenCV &middot; threading &middot; Windows SAPI via COM</li>
           </ul>
           <div class="project-links">
-            <a href="https://github.com/Ujjwals-GHub/Shravan_AI/tree/Streamlit" class="btn btn-source btn-sm" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> Source</a>
-            <a href="https://shravan-ai.streamlit.app/" class="btn btn-demo btn-sm" target="_blank" rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+            <a href="https://github.com/Ujjwals-GHub/Shravan_AI/tree/Streamlit" class="btn btn-source btn-sm" target="_blank" rel="noopener noreferrer"><i class="fab fa-github" aria-hidden="true"></i> Source</a>
+            <a href="https://shravan-ai.streamlit.app/" class="btn btn-demo btn-sm" target="_blank" rel="noopener noreferrer"><i class="fas fa-external-link-alt" aria-hidden="true"></i> Live Demo</a>
           </div>
         </article>
 
@@ -303,8 +338,8 @@
             <li>Streamlit frontend with alias-filtering for 100k+ non-ASCII titles</li>
           </ul>
           <div class="project-links">
-            <a href="https://github.com/Ujjwals-GHub/Anime_Recommendation_System" class="btn btn-source btn-sm" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> Source</a>
-            <a href="https://ujjwals-animerecommendationsystem.streamlit.app/" class="btn btn-demo btn-sm" target="_blank" rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+            <a href="https://github.com/Ujjwals-GHub/Anime_Recommendation_System" class="btn btn-source btn-sm" target="_blank" rel="noopener noreferrer"><i class="fab fa-github" aria-hidden="true"></i> Source</a>
+            <a href="https://ujjwals-animerecommendationsystem.streamlit.app/" class="btn btn-demo btn-sm" target="_blank" rel="noopener noreferrer"><i class="fas fa-external-link-alt" aria-hidden="true"></i> Live Demo</a>
           </div>
         </article>
 
@@ -315,7 +350,7 @@
           <div class="project-corner br" aria-hidden="true"></div>
           -->
           <p class="project-eyebrow">Personal AI assistant</p>
-          <span class="status-badge"><i class="fas fa-tools"></i> Currently Building</span>
+          <span class="status-badge"><i class="fas fa-tools" aria-hidden="true"></i> Currently Building</span>
           <h3>Wednesday</h3>
           <p class="project-desc">
             A text-command personal desktop assistant &mdash; currently handles opening,
@@ -340,7 +375,7 @@
           <div class="project-corner br" aria-hidden="true"></div>
           -->
           <p class="project-eyebrow">Planned &middot; closes the GenAI gap</p>
-          <span class="status-badge status-badge-outline"><i class="fas fa-rocket"></i> Next up</span>
+          <span class="status-badge status-badge-outline"><i class="fas fa-rocket" aria-hidden="true"></i> Next up</span>
           <h3>RAG-based IT knowledge assistant</h3>
           <p class="project-desc">
             A retrieval-augmented chatbot that answers SCCM/Intune troubleshooting questions
@@ -361,7 +396,7 @@
   <section class="section" id="focus">
     <div class="wrap">
       <p class="eyebrow">Current focus</p>
-      <h2 class="section-title"><i class="fas fa-rocket tech-icon"></i> Currently Exploring</h2>
+      <h2 class="section-title"><i class="fas fa-rocket tech-icon" aria-hidden="true"></i> Currently Exploring</h2>
       <div class="focus-row reveal">
         <p class="focus-copy">
           Generative AI, LLMs, RAG, and prompt engineering are areas I know at a theoretical
@@ -388,7 +423,7 @@
         <div class="edu-card reveal">
           <h3>BSc (Honours), Data Science &amp; Artificial Intelligence</h3>
           <p class="edu-sub">Indian Institute of Technology, Guwahati</p>
-          <p class="edu-date"><i class="far fa-calendar-alt tech-icon"></i> Expected January 2028</p>
+          <p class="edu-date"><i class="far fa-calendar-alt tech-icon" aria-hidden="true"></i> Expected January 2028</p>
         </div>
 
         <div class="cert-list reveal" style="--reveal-delay:100ms">
@@ -424,16 +459,16 @@
 
       <div class="contact-links reveal">
         <a href="mailto:ujjwalk321gupta@gmail.com" class="contact-link" target="_blank" rel="noopener noreferrer">
-          <span class="badge-icon"><i class="fas fa-envelope"></i></span> ujjwalk321gupta@gmail.com
+          <span class="badge-icon"><i class="fas fa-envelope" aria-hidden="true"></i></span> ujjwalk321gupta@gmail.com
         </a>
         <a href="https://www.linkedin.com/in/ujjwals-lin/" class="contact-link" target="_blank" rel="noopener noreferrer">
-          <span class="badge-icon"><i class="fab fa-linkedin"></i></span> LinkedIn
+          <span class="badge-icon"><i class="fab fa-linkedin" aria-hidden="true"></i></span> LinkedIn
         </a>
         <a href="https://github.com/Ujjwals-GHub" class="contact-link" target="_blank" rel="noopener noreferrer">
-          <span class="badge-icon"><i class="fab fa-github"></i></span> GitHub
+          <span class="badge-icon"><i class="fab fa-github" aria-hidden="true"></i></span> GitHub
         </a>
         <a href="https://huggingface.co/Ujjwals-HFace" class="contact-link" target="_blank" rel="noopener noreferrer">
-          <span class="badge-icon emoji-icon">🤗</span> Hugging Face
+          <span class="badge-icon emoji-icon" aria-hidden="true">🤗</span> Hugging Face
         </a>
       </div>
     </div>
@@ -453,7 +488,7 @@
       <a href="#projects">Projects</a>
       <a href="#contact">Contact</a>
     </nav>
-    <p class="footer-copyright">&copy; 2026 Ujjwal Gupta</p>
+    <p class="footer-copyright">&copy; <span id="copyright-year">2026</span> Ujjwal Gupta</p>
   </div>
 </footer>
 
