@@ -2,35 +2,32 @@
   "use strict";
 
   /* ---------- Theme Toggle Logic ---------- */
+  // Initial theme detection now happens in an inline <script> in <head>
+  // (before first paint) to prevent a flash of the wrong theme.
+  // This block only wires up the toggle button's click behavior.
   const themeToggle = document.getElementById('theme-toggle');
-  
-  // Check for saved theme in localStorage
-  const currentTheme = localStorage.getItem('theme');
-  
-  // Enforce dark mode as the native default, only changing if 'light' was explicitly saved
-  if (currentTheme === 'light') {
-    document.documentElement.removeAttribute('data-theme');
-  } else {
-    document.documentElement.setAttribute('data-theme', 'dark');
-    // Save the preference so the system knows dark is currently active
-    localStorage.setItem('theme', 'dark'); 
-  }
 
   if (themeToggle) {
     themeToggle.addEventListener('click', () => {
       let theme = document.documentElement.getAttribute('data-theme');
-      
+
       // If currently dark, switch to light
       if (theme === 'dark') {
         document.documentElement.removeAttribute('data-theme');
         localStorage.setItem('theme', 'light');
-      } 
+      }
       // If currently light, switch to dark
       else {
         document.documentElement.setAttribute('data-theme', 'dark');
         localStorage.setItem('theme', 'dark');
       }
     });
+  }
+
+  /* ---------- Dynamic footer year ---------- */
+  var yearEl = document.getElementById('copyright-year');
+  if (yearEl) {
+    yearEl.textContent = new Date().getFullYear();
   }
 
   /* ---------- Existing Logic Below ---------- */
